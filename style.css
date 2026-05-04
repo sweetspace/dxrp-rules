@@ -45,49 +45,89 @@ body {
     100% { transform: translate(-10vw, -10vh); }
 }
 
-/* --- SPACING UPDATES START HERE --- */
+/* --- BRAND HEADER STYLING --- */
+
+.brand-header {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.main-title {
+    margin: 0;
+    font-size: 4.2em;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    
+    /* Blended Gradient: White to soft yellow/greenish white */
+    background: linear-gradient(to right, #ffffff, #fdfeb8, #d4ffd6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Very soft glow to blend into the gray background */
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.15));
+}
+
+.subtitle-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: -10px;
+}
+
+.sub-title {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: 400;
+    letter-spacing: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+}
+
+.line {
+    width: 30px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(234, 255, 0, 0.2), transparent);
+}
+
+/* --- CONTAINER & MENU LIST --- */
 
 .container {
     width: 100%;
-    max-width: 650px; /* Slightly wider for a grander look */
-    padding: 80px 20px; /* More space at the top and bottom */
+    max-width: 650px; 
+    padding: 80px 20px; 
     text-align: center;
     z-index: 1;
-}
-
-.logo {
-    width: 150px;
-    margin-bottom: 60px; /* More space between logo and first box */
-    filter: drop-shadow(0 0 15px rgba(234, 255, 0, 0.4));
 }
 
 .menu-list {
     display: flex;
     flex-direction: column;
-    gap: 25px; /* Increased from 15px to 25px for better breathing room */
+    gap: 25px; 
 }
 
 details {
     background: rgba(30, 30, 30, 0.6);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 14px; /* Slightly rounder for a softer look */
+    border-radius: 14px; 
     transition: 0.3s ease;
 }
 
 summary {
-    padding: 22px; /* Thicker clickable area */
+    padding: 22px; 
     font-weight: 600;
     cursor: pointer;
     list-style: none;
     text-transform: uppercase;
-    letter-spacing: 2px; /* More spread out letters for a cleaner feel */
+    letter-spacing: 2px; 
 }
 
 details[open] {
     background: rgba(40, 40, 40, 0.8);
     border: 1px solid rgba(234, 255, 0, 0.2);
-    padding-bottom: 10px; /* Extra room at the bottom when open */
+    padding-bottom: 10px; 
 }
 
 details[open] > summary {
@@ -96,10 +136,10 @@ details[open] > summary {
 }
 
 .sub-menu {
-    padding: 0 25px 20px 25px; /* More internal side-padding */
+    padding: 0 25px 20px 25px; 
     display: flex;
     flex-direction: column;
-    gap: 18px; /* More space between the two nested sub-boxes */
+    gap: 18px; 
 }
 
 .nested {
@@ -108,16 +148,16 @@ details[open] > summary {
 }
 
 .nested summary {
-    padding: 15px; /* Spaced out sub-box headers */
+    padding: 15px; 
     font-size: 0.85em;
     color: #00ff88;
     letter-spacing: 1px;
 }
 
 p {
-    padding: 5px 15px 20px 15px; /* Better padding for the rule text */
+    padding: 5px 15px 20px 15px; 
     font-size: 0.9em;
     color: #ccc;
     text-align: left;
-    line-height: 1.6; /* Higher line height makes text much easier to read */
+    line-height: 1.6; 
 }
