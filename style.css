@@ -2,105 +2,122 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #0f0f0f; /* Dark, not pure black */
+    background-color: #121212; /* Deep Gray */
     color: white;
     display: flex;
     justify-content: center;
     overflow-x: hidden;
+    min-height: 100vh;
 }
 
-/* The Animated Wave Background */
-.background-waves {
+.bg-container {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     z-index: -1;
-    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
 }
 
-.background-waves::after {
-    content: "";
+.fairy {
     position: absolute;
-    width: 200%;
-    height: 200%;
-    top: -50%;
-    left: -50%;
-    background: radial-gradient(circle at center, rgba(234, 255, 0, 0.05) 0%, rgba(0, 255, 136, 0.05) 40%, transparent 70%);
-    animation: wave 15s infinite linear;
+    border-radius: 50%;
+    filter: blur(50px);
+    opacity: 0.35;
 }
 
-@keyframes wave {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+.yellow { background: #eaff00; }
+.green { background: #00ff88; }
+
+.f1 { width: 120px; height: 120px; animation: fly 15s infinite linear; }
+.f2 { width: 180px; height: 180px; animation: fly 22s infinite ease-in-out reverse; }
+.f3 { width: 100px; height: 100px; animation: fly 18s infinite ease-in-out; top: 20%; }
+.f4 { width: 150px; height: 150px; animation: fly 25s infinite linear reverse; left: 30%; }
+.f5 { width: 80px; height: 80px; animation: fly 12s infinite ease-in-out; left: 70%; }
+.f6 { width: 200px; height: 200px; animation: fly 30s infinite linear; top: 60%; }
+.f7 { width: 110px; height: 110px; animation: fly 20s infinite ease-in-out reverse; left: 50%; }
+.f8 { width: 140px; height: 140px; animation: fly 28s infinite linear; top: 10%; left: 80%; }
+
+@keyframes fly {
+    0% { transform: translate(-10vw, -10vh); }
+    33% { transform: translate(100vw, 40vh); }
+    66% { transform: translate(40vw, 100vh); }
+    100% { transform: translate(-10vw, -10vh); }
 }
+
+/* --- SPACING UPDATES START HERE --- */
 
 .container {
     width: 100%;
-    max-width: 600px;
-    padding: 40px 20px;
+    max-width: 650px; /* Slightly wider for a grander look */
+    padding: 80px 20px; /* More space at the top and bottom */
     text-align: center;
+    z-index: 1;
 }
 
 .logo {
-    width: 120px;
-    margin-bottom: 30px;
-    filter: drop-shadow(0 0 10px rgba(234, 255, 0, 0.3));
+    width: 150px;
+    margin-bottom: 60px; /* More space between logo and first box */
+    filter: drop-shadow(0 0 15px rgba(234, 255, 0, 0.4));
 }
 
 .menu-list {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 25px; /* Increased from 15px to 25px for better breathing room */
 }
 
-/* Main Dropdown Styling */
 details {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: 0.3s;
+    background: rgba(30, 30, 30, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 14px; /* Slightly rounder for a softer look */
+    transition: 0.3s ease;
 }
 
 summary {
-    padding: 15px;
+    padding: 22px; /* Thicker clickable area */
     font-weight: 600;
     cursor: pointer;
     list-style: none;
-    outline: none;
-    border-bottom: 2px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px; /* More spread out letters for a cleaner feel */
+}
+
+details[open] {
+    background: rgba(40, 40, 40, 0.8);
+    border: 1px solid rgba(234, 255, 0, 0.2);
+    padding-bottom: 10px; /* Extra room at the bottom when open */
 }
 
 details[open] > summary {
-    border-bottom: 2px solid #eaff00; /* Yellow accent when open */
     color: #eaff00;
+    margin-bottom: 5px;
 }
 
-/* Sub-Menu (Nested) */
 .sub-menu {
-    padding: 15px;
+    padding: 0 25px 20px 25px; /* More internal side-padding */
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    background: rgba(0, 0, 0, 0.2);
+    gap: 18px; /* More space between the two nested sub-boxes */
 }
 
 .nested {
-    background: rgba(0, 255, 136, 0.05); /* Greenish tint */
-    border: 1px solid rgba(0, 255, 136, 0.2);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(0, 255, 136, 0.1);
 }
 
 .nested summary {
-    padding: 10px;
-    font-size: 0.9em;
+    padding: 15px; /* Spaced out sub-box headers */
+    font-size: 0.85em;
+    color: #00ff88;
+    letter-spacing: 1px;
 }
 
 p {
-    padding: 10px 15px;
-    font-size: 0.85em;
+    padding: 5px 15px 20px 15px; /* Better padding for the rule text */
+    font-size: 0.9em;
     color: #ccc;
     text-align: left;
-    margin: 0;
+    line-height: 1.6; /* Higher line height makes text much easier to read */
 }
