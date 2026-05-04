@@ -10,6 +10,7 @@ body {
     min-height: 100vh;
 }
 
+/* --- ANIMATED BACKGROUND --- */
 .bg-container {
     position: fixed;
     top: 0;
@@ -45,8 +46,7 @@ body {
     100% { transform: translate(-10vw, -10vh); }
 }
 
-/* --- BRAND HEADER STYLING --- */
-
+/* --- BRAND HEADER (TEXT LOGO) --- */
 .brand-header {
     margin-bottom: 60px;
     text-align: center;
@@ -59,12 +59,11 @@ body {
     text-transform: uppercase;
     letter-spacing: -2px;
     
-    /* Blended Gradient: White to soft yellow/greenish white */
+    /* Blended Gradient: White -> Yellow -> Greenish White */
     background: linear-gradient(to right, #ffffff, #fdfeb8, #d4ffd6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     
-    /* Very soft glow to blend into the gray background */
     filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.15));
 }
 
@@ -92,7 +91,6 @@ body {
 }
 
 /* --- CONTAINER & MENU LIST --- */
-
 .container {
     width: 100%;
     max-width: 650px; 
@@ -154,10 +152,25 @@ details[open] > summary {
     letter-spacing: 1px;
 }
 
-p {
-    padding: 5px 15px 20px 15px; 
+/* --- RULE LIST FORMATTING --- */
+.rule-list-container {
+    padding: 10px 15px;
+}
+
+.rule-list-container p {
+    margin-bottom: 12px;
+    border-left: 2px solid rgba(0, 255, 136, 0.2);
+    padding-left: 15px;
     font-size: 0.9em;
     color: #ccc;
     text-align: left;
-    line-height: 1.6; 
+    line-height: 1.6;
+}
+
+.rule-list-container strong {
+    color: #eaff00; /* Fair Dinkum Yellow */
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-right: 5px;
 }
