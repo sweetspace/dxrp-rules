@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0f0f0f; /* Dark, not pure black */
+    color: white;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+/* The Animated Wave Background */
+.background-waves {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+}
+
+.background-waves::after {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle at center, rgba(234, 255, 0, 0.05) 0%, rgba(0, 255, 136, 0.05) 40%, transparent 70%);
+    animation: wave 15s infinite linear;
+}
+
+@keyframes wave {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.logo {
+    width: 120px;
+    margin-bottom: 30px;
+    filter: drop-shadow(0 0 10px rgba(234, 255, 0, 0.3));
+}
+
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Main Dropdown Styling */
+details {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+summary {
+    padding: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    outline: none;
+    border-bottom: 2px solid transparent;
+}
+
+details[open] > summary {
+    border-bottom: 2px solid #eaff00; /* Yellow accent when open */
+    color: #eaff00;
+}
+
+/* Sub-Menu (Nested) */
+.sub-menu {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.nested {
+    background: rgba(0, 255, 136, 0.05); /* Greenish tint */
+    border: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+.nested summary {
+    padding: 10px;
+    font-size: 0.9em;
+}
+
+p {
+    padding: 10px 15px;
+    font-size: 0.85em;
+    color: #ccc;
+    text-align: left;
+    margin: 0;
+}
